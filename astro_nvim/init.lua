@@ -10,11 +10,28 @@ return {
   },
   lsp = {
     formatting = {
-      format_on_save = false, -- enable or disable automatic formatting on save
+      format_on_save = true, -- enable or disable automatic formatting on save
+      disabled = { "intelephense" }
+    },
+    servers = {
+      "dartls",
     },
     setup_handlers = {
-      tsserver = function(_, opts) require("typescript").setup { server = opts } end
-    }
+      -- add custom handler
+      dartls = function(_, opts) require("flutter-tools").setup { lsp = opts } end,
+    },
+    config = {
+      dartls = {
+        -- any changes you want to make to the LSP setup, for example
+        color = {
+          enabled = true,
+        },
+        settings = {
+          showTodos = true,
+          completeFunctionCalls = true,
+        },
+      },
+    },
   },
   plugins = {
     {
@@ -47,28 +64,8 @@ return {
         return opts
       end
     },
-    "jose-elias-alvarez/typescript.nvim", -- add lsp plugin
     {
-      "williamboman/mason-lspconfig.nvim",
-      opts = {
-        ensure_installed = { "tsserver" }, -- automatically install lsp
-      },
+      'akinsho/flutter-tools.nvim',
     },
-    "terrastruct/d2-vim",
-  },
-  dap = {
-    configurations = {
-      php = {
-        {
-          type = 'php',
-          request = 'launch',
-          name = 'Listen for Xdebug',
-          port = 8123,
-          pathMappings = {
-            ["/app"] = "${workspaceFolder}"
-          }
-        }
-      }
-    }
   }
 }
