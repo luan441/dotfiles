@@ -1,0 +1,80 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 12,
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/mode"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "battery",
+        "clock",
+        "tray"
+    ],
+    "clock": {
+        "format": "{: %d %b, %Y, %a - %R}",
+        "tooltip": false
+    },
+    "hyprland/window": {
+        "max-length": 60,
+        "separate-outputs": false
+    },
+    "memory": {
+        "interval": 5,
+        "format": " {}%"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": " {usage:2}%",
+        "tooltip": false
+    },
+    "disk": {
+        "format": "  {free}/{total}",
+        "tooltip": false
+    },
+    "tray": {
+        "spacing": 12
+    },
+    "pulseaudio": {
+        "format": "{icon}{volume}% {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "  {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                " ",
+                " ",
+                " "
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+}
