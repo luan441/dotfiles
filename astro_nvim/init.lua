@@ -1,16 +1,16 @@
 return {
-  colorscheme = "dracula",
+  colorscheme = 'tokyonight-moon',
   options = {
     opt = {
       showtabline = 0,
       relativenumber = false,
-      shiftwidth = 4,
-      tabstop = 4,
+      -- shiftwidth = 4,
+      -- tabstop = 4,
     }
   },
   lsp = {
     formatting = {
-      format_on_save = true, -- enable or disable automatic formatting on save
+      format_on_save = false, -- enable or disable automatic formatting on save
       disabled = { "intelephense" }
     },
     servers = {
@@ -34,10 +34,6 @@ return {
     },
   },
   plugins = {
-    {
-      "Mofiqul/dracula.nvim",
-      name = "dracula"
-    },
     {
       "rebelot/heirline.nvim",
       opts = function(_, opts)
@@ -67,5 +63,17 @@ return {
     {
       'akinsho/flutter-tools.nvim',
     },
+    {
+      "folke/tokyonight.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+    },
+    {
+      "iamcco/markdown-preview.nvim",
+      cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+      ft = { "markdown" },
+      build = function() vim.fn["mkdp#util#install"]() end,
+    }
   }
 }
