@@ -1,5 +1,5 @@
 return {
-  colorscheme = 'tokyonight-moon',
+  colorscheme = 'dracula',
   options = {
     opt = {
       showtabline = 0,
@@ -35,6 +35,10 @@ return {
   },
   plugins = {
     {
+      "Mofiqul/dracula.nvim",
+      name = "dracula"
+    },
+    {
       "rebelot/heirline.nvim",
       opts = function(_, opts)
         local status = require("astronvim.utils.status")
@@ -64,16 +68,14 @@ return {
       'akinsho/flutter-tools.nvim',
     },
     {
-      "folke/tokyonight.nvim",
-      lazy = false,
-      priority = 1000,
-      opts = {},
-    },
-    {
       "iamcco/markdown-preview.nvim",
       cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
       ft = { "markdown" },
       build = function() vim.fn["mkdp#util#install"]() end,
+    },
+    {
+      "xiyaowong/transparent.nvim",
+      lazy = false,
     }
   }
 }
