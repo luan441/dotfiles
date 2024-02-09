@@ -1,80 +1,74 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 12,
-    "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/mode"
-    ],
-    "modules-center": [
-        "hyprland/window"
-    ],
-    "modules-right": [
-        "cpu",
-        "memory",
-        "pulseaudio",
-        "battery",
-        "clock",
-        "tray"
-    ],
-    "clock": {
-        "format": "{: %d %b, %Y, %a - %R}",
-        "tooltip": false
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "spacing": 4,
+  "modules-left": [
+    // "sway/workspaces",
+    // "sway/mode"
+    "hyprland/workspaces",
+    "hyprland/mode"
+  ],
+  "modules-center": [
+    // "sway/window"
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "battery",
+    "clock"
+  ],
+  "sway/window": {
+    "max-length": 128
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "tray": {
+    "spacing": 4
+  },
+  "custom/weather": {
+    "exec": "~/.config/waybar/wittr.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 900
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{volume}% {icon}  {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+        "headphone": "",
+        "headset": "󰋎",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": [" ", " ", " "]
     },
-    "hyprland/window": {
-        "max-length": 60,
-        "separate-outputs": false
+    "on-click": "pavucontrol-qt"
+  },
+  "battery": {
+    "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 15
     },
-    "memory": {
-        "interval": 5,
-        "format": " {}%"
-    },
-    "cpu": {
-        "interval": 5,
-        "format": " {usage:2}%",
-        "tooltip": false
-    },
-    "disk": {
-        "format": "  {free}/{total}",
-        "tooltip": false
-    },
-    "tray": {
-        "spacing": 12
-    },
-    "pulseaudio": {
-        "format": "{icon}{volume}% {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "  {volume}%",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                " ",
-                " ",
-                " "
-            ]
-        },
-        "on-click": "pavucontrol"
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
-    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰢞 ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": [" ", " ", " ", " ", " "]
+  }
 }

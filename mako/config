@@ -1,0 +1,16 @@
+background-color=#282a36
+text-color=#F8F8F2
+border-color=#282a36
+width=600
+
+font=FiraCode Nerd Font 13
+anchor=top-center
+
+[urgency=low]
+border-color=#282a36
+
+[urgency=normal]
+border-color=#50FA7B
+
+[urgency=high]
+border-color=#ff5555
