@@ -10,7 +10,7 @@ return {
   },
   lsp = {
     formatting = {
-      format_on_save = true, -- enable or disable automatic formatting on save
+      format_on_save = false, -- enable or disable automatic formatting on save
       disabled = { "intelephense", "tsserver" }
     },
     servers = {
@@ -94,6 +94,9 @@ return {
         capabilities = {
           offsetEncoding = "utf-8",
         },
+      },
+      bufls = {
+        filetypes = {"proto"},
       },
     },
   },
