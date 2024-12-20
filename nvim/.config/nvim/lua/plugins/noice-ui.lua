@@ -23,11 +23,14 @@ return {
 				lsp_doc_border = false, -- add a border to hover docs and signature help
 			},
 			cmdline = {
-				view = "cmdline_popup",
+				view = "cmdline",
 				format = {
 					cmdline = { pattern = "^:", icon = " ", lang = "vim" },
 				},
 			},
+      popupmenu = {
+        backend = "cmp"
+      }
 		})
 	end,
 }
