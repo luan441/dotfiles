@@ -6,6 +6,17 @@ return {
 		{ "nvim-tree/nvim-web-devicons" },
 	},
 	config = function()
+		local treesistter = {
+			function()
+				return "TS  "
+			end,
+			color = function()
+				local buf = vim.api.nvim_get_current_buf()
+				local ts = vim.treesitter.highlighter.active[buf]
+				return { fg = ts and not vim.tbl_isempty(ts) and "#98971a" or "#cc241d" }
+			end,
+		}
+
 		require("lualine").setup({
 			options = {
 				theme = "gruvbox-material",
@@ -17,16 +28,7 @@ return {
 				lualine_b = { "branch", "diff", "diagnostics" },
 				lualine_c = { "filename" },
 				lualine_x = {
-					{
-						function()
-							return "TS "
-						end,
-						color = function()
-							local buf = vim.api.nvim_get_current_buf()
-							local ts = vim.treesitter.highlighter.active[buf]
-							return { fg = ts and not vim.tbl_isempty(ts) and "#98971a" or "#cc241d" }
-						end,
-					},
+					treesistter,
 					"ex.lsp.all",
 				},
 				lualine_y = { "progress" },
