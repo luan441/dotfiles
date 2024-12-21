@@ -19,13 +19,13 @@ uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 
 # Options
-shutdown=''
-reboot=''
-lock=''
-suspend=''
-logout=''
-yes=''
-no=''
+shutdown=' '
+reboot=' '
+lock='󰌾'
+suspend=' '
+logout='󰍃'
+yes=' '
+no='󰂭 '
 
 # Rofi CMD
 rofi_cmd() {
@@ -63,9 +63,9 @@ run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
-			systemctl poweroff
+			sudo shutdown -h now
 		elif [[ $1 == '--reboot' ]]; then
-			systemctl reboot
+			sudo shutdown -r now
 		elif [[ $1 == '--suspend' ]]; then
 			mpc -q pause
 			amixer set Master mute
