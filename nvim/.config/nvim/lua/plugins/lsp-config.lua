@@ -17,6 +17,7 @@ return {
 					"marksman",
           "yamlls",
           "jsonls",
+          "gopls"
 				},
 			})
 		end,
