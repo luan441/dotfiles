@@ -28,6 +28,7 @@ $HOME/.config/polybar/launch.sh &
 nm-applet &
 blueman-applet &
 # $HOME/.fehbg &
+setxkbmap us -variant alt-intl &
 nitrogen --restore &
 picom &
 flameshot &
