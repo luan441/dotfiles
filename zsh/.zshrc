@@ -27,6 +27,7 @@ fpath=(${ASDF_DIR}/completions $fpath)
 
 alias v="nvim"
 alias ls="exa"
+alias ff="fastfetch"
 alias xi="sudo xbps-install"
 alias xr="sudo xbps-remove"
 alias xq="xbps-query -Rs"
