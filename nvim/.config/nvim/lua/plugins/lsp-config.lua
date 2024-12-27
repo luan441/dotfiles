@@ -17,7 +17,8 @@ return {
 					"marksman",
           "yamlls",
           "jsonls",
-          "gopls"
+          "gopls",
+          "clangd"
 				},
 			})
 		end,
@@ -35,6 +36,7 @@ return {
         jsonls = {},
         yamlls = {},
         gopls = {},
+        clangd = {}
 			},
 		},
 		config = function(_, opts)
