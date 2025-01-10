@@ -1,0 +1,8 @@
+font-family = JetBrainsMonoNL Nerd Font
+
+confirm-close-surface = false
+
+theme = GruvboxDark
+
+cursor-style = block
+shell-integration-features = no-cursor

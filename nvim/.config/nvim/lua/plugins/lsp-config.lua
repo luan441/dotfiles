@@ -18,7 +18,9 @@ return {
           "yamlls",
           "jsonls",
           "gopls",
-          "clangd"
+          "clangd",
+          "ts_ls",
+          "eslint"
 				},
 			})
 		end,
@@ -36,7 +38,9 @@ return {
         jsonls = {},
         yamlls = {},
         gopls = {},
-        clangd = {}
+        clangd = {},
+        ts_ls = {},
+        eslint = {}
 			},
 		},
 		config = function(_, opts)

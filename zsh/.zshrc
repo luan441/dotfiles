@@ -19,8 +19,8 @@ SAVEHIST=10000
 # Share history in every terminal session
 setopt SHARE_HISTORY
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 . "$HOME/.asdf/asdf.sh"
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -28,6 +28,7 @@ fpath=(${ASDF_DIR}/completions $fpath)
 alias v="nvim"
 alias ls="exa"
 alias ff="fastfetch"
+alias cc="clockify-cli"
 alias xi="sudo xbps-install"
 alias xr="sudo xbps-remove"
 alias xq="xbps-query -Rs"
