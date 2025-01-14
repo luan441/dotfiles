@@ -20,7 +20,11 @@ return {
           "gopls",
           "clangd",
           "ts_ls",
-          "eslint"
+          "eslint",
+          "angularls",
+          "html",
+          "cssls",
+          "bashls"
 				},
 			})
 		end,
@@ -40,7 +44,11 @@ return {
         gopls = {},
         clangd = {},
         ts_ls = {},
-        eslint = {}
+        eslint = {},
+        angularls = {},
+        html = {},
+        cssls = {},
+        bashls = {}
 			},
 		},
 		config = function(_, opts)
